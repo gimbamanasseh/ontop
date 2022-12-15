@@ -1,12 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
-</head>
-<body>
-    <h2>Hello World!</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnTop - Contractor</title>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/fe785d2477.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="includes/styles.css" type="text/css" charset="utf-8" />
+  </head>
+  <body>
+    <!--header-->
+    <header id="home">
+      <!--navbar-->
+      <nav id="nav">
+        <div class="nav-center">
+          <!--nav header-->
+          <div class="nav-header">
+            <img src="includes/logo.png" alt="logo" class="logo" />
+            <button class="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <!--links-->
+          <div class="links-container">
+            <ul class="links">
+              <li>
+                <a href="#" class="scroll-link"><i class="fa-regular fa-user"></i>&nbsp;Contracts&nbsp;<i class="fa-solid fa-chevron-down chevron"></i></a>
+              </li>
+              <li>
+                <a href="#" class="scroll-link"><i class="fa-regular fa-file-lines"></i>&nbsp;Documents&nbsp;<i class="fa-solid fa-chevron-down chevron"></i></a>
+              </li>
+              <li>
+                <a href="#" class="scroll-link"><i class="fa-regular fa-credit-card"></i>&nbsp;Payout&nbsp;<i class="fa-solid fa-chevron-down chevron"></i></a>
+              </li>
+              <li>
+                <a href="#" class="scroll-link"><i class="fa-regular fa-calendar"></i>&nbsp;Time&nbsp;<i class="fa-solid fa-chevron-down chevron"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="profile-container">
+            <div class="divide"></div>
+            <span class="profile-img">
+                <img src="includes/profile-img.png" alt="profile image" class="profile">
+            </span>
+            &nbsp;<i id="profile-chev" class="fa-solid fa-chevron-down chevron"></i>
+          </div>
+          <!-- end of links -->
+        </div>
+      </nav>
+    </header>
+    <main>
+        <section class="container">
+            <div class="intro">
+                <h2>Contracts for {{Client}}</h2>
+            </div>
+            <div class="search-bar">
+                <div class="searchbox">
+                   <i class="fas fa-magnifying-glass icon"></i><input type="text" class="search" name="search-contract" placeholder="Search" />
+                </div>
+                <div class="filter">
+                    <button class="filter-btn"><i class="fas fa-sliders"></i>&nbsp;&nbsp;Filter</button>
+                </div>
+                <div class="hire">
+                    <button class="new-hire"><i class="fa-regular fa-plus"></i>&nbsp;New Hire </button>
+                </div>
+            </div>
+            <div class="filters-box">
+                <div class="create-date">
+                    <div class="date-icon"><i class="fa-regular fa-calendar"></i></div>
+                    <div class="create-text"><span>Created on:</span></div>
+                    <div><input type="date" name="create-date" id="create-date" /></div>
+                </div>
+                <div class="contract">
+                    <select name="contract-type" id="contract-type" class="contract-type">
+                        <option value="1" selected>Contract Type</option>
+                    </select>
+                </div>
+                <div class="contractor">
+                    <input type="text" class="contractor-name" placeholder="Contractor Name" name="contractor-name" />
+                </div>
+                <div class="status">
+                    <select name="set-status" id="set-status" class="set-status">
+                        <option value="0" selected>Status</option>
+                        <option value="1">Active</option>
+                        <option value="2">Pending Signature</option>
+                    </select>
+                </div>
+                <div class="clear">
+                    <button class="clear-filter"><i class="fa-regular fa-trash-can"></i>&nbsp;Clear Filter</button>
+                </div>
+            </div>
+            <div class="breakdowntable">
+                <table class="tabledetails">
+                    <thead>
+                        <tr>
+                            <th scope="col">Contractor Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="trow">
+                            <td data-label="Contractor Name"><img src="includes/contractor1.png" alt="contractor image" class="c-img" />&nbsp;<span class="c-name">Darlene Robertson</span></td>
+                            <td data-label="Type">Traditional</td>
+                            <td data-label="Start Date">Mar 4, 2021</td>
+                            <td data-label="Amount">$200 USD</td>
+                            <td data-label="Status">
+                                <p class="status-active"><i class="fas fa-circle dot"></i>&nbsp;Active</p>
+                            </td>
+                            <td data-label="Actions">
+                              <div id="primary-nav">
+                                <!-- element must have an ID -->
+                                <ul class="clicky-menu no-js">
+                                  <li id="elipsis">
+                                    <a href="#" class="elipsis"><i class="fas fa-ellipsis-vertical"></i></a>
+                                    <ul>
+                                      <li><a href="#"><i class="fas fa-pen"></i>&nbsp;Edit</a></li>
+                                      <li><a href="#"><i class="fas fa-file-contract"></i>&nbsp;Sign</a></li>
+                                      <li><a href="#"><i class="fa-regular fa-file-lines"></i>&nbsp;View Summary</a></li>
+                                      <li><a href="#"><i class="fa-regular fa-trash-can"></i>&nbsp;Delete</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr class="trow">
+                            <td data-label="Contractor Name"><img src="includes/contractor2.png" alt="contractor image" class="c-img" />&nbsp;<span class="c-name">Darlene Robertson</span></td>
+                            <td data-label="Type">Traditional</td>
+                            <td data-label="Start Date">Mar 4, 2021</td>
+                            <td data-label="Amount">$200 USD</td>
+                            <td data-label="Status">
+                                <p class="status-active"><i class="fas fa-circle dot"></i>&nbsp;Active</p>
+                            </td>
+                            <td data-label="Actions">
+                              <div id="primary-nav">
+                                <!-- element must have an ID -->
+                                <ul class="clicky-menu no-js">
+                                  <li id="elipsis">
+                                    <a href="" class="elipsis"><i class="fas fa-ellipsis-vertical"></i></a>
+                                    <ul>
+                                      <li><a href="#"><i class="fas fa-pen"></i>&nbsp;Edit</a></li>
+                                      <li><a href="#"><i class="fas fa-file-contract"></i>&nbsp;Sign</a></li>
+                                      <li><a href="#"><i class="fa-regular fa-file-lines"></i>&nbsp;View Summary</a></li>
+                                      <li><a href="#"><i class="fa-regular fa-trash-can"></i>&nbsp;Delete</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr class="trow">
+                            <td data-label="Contractor Name"><img src="includes/contractor3.png" alt="contractor image" class="c-img" />&nbsp;<span class="c-name">Darlene Robertson</span></td>
+                            <td data-label="Type">Traditional</td>
+                            <td data-label="Start Date">Mar 4, 2021</td>
+                            <td data-label="Amount">$200 USD</td>
+                            <td data-label="Status" class="stats-a-p">
+                                <p class="status-pending"><i class="fas fa-circle dot"></i>&nbsp;Signature pending </p>
+                            </td>
+                            <td data-label="Actions">
+                              <div id="primary-nav">
+                                <!-- element must have an ID -->
+                                <ul class="clicky-menu no-js">
+                                  <li id="elipsis">
+                                    <a href="" class="elipsis"><i class="fas fa-ellipsis-vertical"></i></a>
+                                    <ul>
+                                      <li><a href="#"><i class="fas fa-pen"></i>&nbsp;Edit</a></li>
+                                      <li><a href="#"><i class="fas fa-file-contract"></i>&nbsp;Sign</a></li>
+                                      <li><a href="#"><i class="fa-regular fa-file-lines"></i>&nbsp;View Summary</a></li>
+                                      <li><a href="#"><i class="fa-regular fa-trash-can"></i>&nbsp;Delete</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <!--footer-->
+    <footer class="footer-container">
+        <p>&copy;OnTop Contractors <span id="date">xxxx</span>. All rights reserved.</p>
+    </footer>
+    <!--back to top-->
+    <a href="#" class="top-link">
+    <i class="fa-regular fa-message"></i>
+    </a>
+    <!-- javascript -->
+    <script src="includes/app.js"></script>
+  </body>
 </html>
